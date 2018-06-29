@@ -1,0 +1,29 @@
+{
+  "statuses": [
+    {
+      "entities": {
+        "hashtags": [
+          {
+            "text": "Groovy",
+            "indices": [
+              13,
+              19
+            ]
+          }
+        ]
+      },
+      "text": "Let's talk #Groovy at GGX 2014",
+      "metadata": {
+        "iso_language_code": "en",
+        "result_type": "recent"
+      },
+      "user": {
+        "name": "Fergal Dearle",
+        "created_at": "Mon Apr 26 06:01:55 +0000 2010",
+        },
+        "followers_count": 70,
+        "statuses_count": 579,
+        "friends_count": 110,
+      }
+      ]
+}

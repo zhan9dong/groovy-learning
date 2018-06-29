@@ -1,0 +1,12 @@
+#!/usr/bin/env groovy
+@Grab(group='org.twitter4j', module='twitter4j-core', version='[4.0,)')
+
+if(args) 
+	evaluate (new File(args[0]))
+else {
+    println "Usage: GTweet_1.0 <script>"
+    println "   e.g. GTweet_1.0 EachFollower_1.0.gtwit"
+    println "        GTweet_1.0 EachFriend_1.0.gtwit"
+    println "        GTweet_1.0 ggx_1.0.gtwit"
+    println "        GTweet_1.0 search_1.0.gtwit"
+}

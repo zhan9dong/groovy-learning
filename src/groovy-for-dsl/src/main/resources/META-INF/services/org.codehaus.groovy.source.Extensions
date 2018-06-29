@@ -1,0 +1,5 @@
+# Note that this will not work in the examples package due to a conflict with the groovy-all jar
+# However if you package you own AST transformations into a jar and make it a build dependency it should
+# take precedence over the default Extensions file in the groovy-all jar.
+state
+

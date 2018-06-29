@@ -1,0 +1,46 @@
+apply plugin: "groovy"
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "eclipse"
+apply plugin: 'project-report'
+
+repositories {
+  mavenCentral()
+  maven {
+      url "http://oss.jfrog.org/artifactory/oss-snapshot-local"
+  }
+  flatDir {
+      dirs 'build/libs'
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: '*.jar')
+  compile "org.codehaus.groovy:groovy-all:2.4.3"
+  compile "org.twitter4j:twitter4j-core:4.0.2"
+  compile "com.github.lalyos:jfiglet:0.0.3"
+  testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+  testCompile "co.freeside.betamax:betamax-core:2.0-SNAPSHOT"
+  testCompile "xmlunit:xmlunit:1.4"
+  testCompile "org.apache.commons:commons-lang3:3.0"
+  testCompile 'junit:junit:[4,)'
+}
+
+task zip(type: Zip) {
+    baseName = 'groovy-for-dsl'
+    from "../groovy-dsl-book"
+    exclude "**/.*"
+    exclude "**/*.zip"
+    exclude "**/gradle/**/*.*"
+    exclude "build/**/*.*"
+    exclude "out/**/*.*"
+    exclude "build/**/"
+    exclude "out/**/"
+}
+
+jar {
+    include "**/transforms/*.class"
+    include "META-INF/services/org.codehaus.groovy.source.Extensions"
+    include "META-INF/services/org.codehaus.groovy.transform.ASTTransformation"
+
+}

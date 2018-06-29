@@ -1,0 +1,51 @@
+task hello {
+    doLast {
+        println "Hello, World!"
+    }
+}
+
+task  helloSimple << {
+    println "Hello, Simple World!"
+}
+
+task helloWithActions {
+    doFirst {
+        print "Hello, "
+    }
+
+    doLast {
+        println "World Actions!"
+    }
+}
+
+task confused {
+    doFirst {
+        println "The first doFirst will be last"
+    }
+
+    doFirst {
+        println "The last doFirst will be first"
+    }
+
+    doLast {
+        println "The first doLast will be first"
+    }
+
+    doLast {
+        println "The last doLast will be last"
+    }
+}
+
+task actionsInOrder << {
+    println "The first will be first"
+}
+
+actionsInOrder << {
+    println "The last will be last"
+}
+
+task helloWithDepends (dependsOn: 'helloSimple') << {
+     println "Hello, Dependent World!"
+}
+
+

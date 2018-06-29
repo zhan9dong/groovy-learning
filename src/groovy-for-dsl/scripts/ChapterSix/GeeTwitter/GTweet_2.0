@@ -1,0 +1,20 @@
+#!/usr/bin/env groovy
+@Grab(group='org.twitter4j', module='twitter4j-core', version='[4.0,)')
+
+import org.codehaus.groovy.control.*
+import org.codehaus.groovy.control.customizers.*
+
+if(args) {
+	def conf = new CompilerConfiguration()
+	def imports = new ImportCustomizer()
+	imports.addStaticStar("GeeTwitter")
+	conf.addCompilationCustomizers(imports)
+    def shell = new GroovyShell(this.class.classLoader, new Binding(), conf)
+	shell.evaluate (new File(args[0]))
+} else {
+    println "Usage: GTweet_2.0 <script>"
+    println "   e.g. GTweet_2.0 EachFollower_2.0.gtwit"
+    println "        GTweet_2.0 EachFriend_2.0.gtwit"
+    println "        GTweet_2.0 ggx_2.0.gtwit"
+    println "        GTweet_2.0 search_2.0.gtwit"
+}
