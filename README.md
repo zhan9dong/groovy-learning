@@ -1,3 +1,6 @@
+
+
+
 #入门笔记 基于《Learning Groovy》
 Authors: Davis, Adam L. 
 
@@ -29,13 +32,16 @@ Jon Skeet
 FOREWORD BY James Gosling
 
  
-* gitbook笔记地址: https://richardgong1987.gitbooks.io/groovy-learning/content/
 
 * [原著电子书地址](https://www.manning.com/books/groovy-in-action-second-edition)
 
 * [原著源码地址](https://manning-content.s3.amazonaws.com/download/7/63bb8a8-75a5-4fcf-8222-ed40a73e523d/GroovyInAction.zip)
 
 
+
+
+
+* gitbook笔记地址: https://richardgong1987.gitbooks.io/groovy-learning/content/
 
 
 本人网名：止水
