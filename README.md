@@ -39,12 +39,9 @@ FOREWORD BY James Gosling
 
 
 
+## [笔记目录 点击进入](./SUMMARY.md)
 
-
-## [笔记目录 点击进入](SUMMARY.md)
-
-* gitbook笔记地址: https://richardgong1987.gitbooks.io/groovy-learning/content/
-
+* gitbook笔记地址: https://richardgong1987.github.io/groovy-learning
 
 
 本人网名：止水
