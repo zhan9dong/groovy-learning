@@ -1,7 +1,0 @@
-/*
- * Use:
-  *
- *  gradle -b empty.gradle tasks
- *
- *  to see what tasks gradle provides by default.
- */

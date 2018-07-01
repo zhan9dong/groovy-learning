@@ -1,0 +1,21 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "execMap": {
+    "":"groovy",
+    "groovy": "groovy"
+  },
+  "events": {
+    "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+  },
+  "watch": ["src/*.*"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json"
+}
+

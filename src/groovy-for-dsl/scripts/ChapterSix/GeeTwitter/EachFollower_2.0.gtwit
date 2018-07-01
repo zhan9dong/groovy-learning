@@ -1,3 +1,0 @@
-eachFollower {
-	println it
-}
