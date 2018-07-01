@@ -1,7 +1,7 @@
 
 
 
-#入门笔记 基于《Learning Groovy》
+# 入门笔记 基于《Learning Groovy》
 Authors: Davis, Adam L. 
 
 
@@ -41,7 +41,10 @@ FOREWORD BY James Gosling
 
 
 
+## [笔记目录 点击进入](SUMMARY.md)
+
 * gitbook笔记地址: https://richardgong1987.gitbooks.io/groovy-learning/content/
+
 
 
 本人网名：止水
