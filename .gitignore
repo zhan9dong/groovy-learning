@@ -63,3 +63,7 @@ typings/
 _book
 
 .idea
+
+out
+
+book-content

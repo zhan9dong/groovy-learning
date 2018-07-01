@@ -8,13 +8,13 @@ Extend and enhance your Java applications with domain-specific scripting in Groo
  From Novice to Professional
 
  
-* gitbook笔记地址（推荐）: https://richardgong1987.gitbooks.io/groovy-learning/content/
+* gitbook笔记地址: https://richardgong1987.gitbooks.io/groovy-learning/content/
 
 * [原著电子书地址](https://www.packtpub.com/application-development/groovy-domain-specific-languages-second-edition)
 
 * [原著源码地址](https://www.packtpub.com/books/content/support/21249)
 
-本人网名：李察德
+本人网名：止水
 
 
 email:
