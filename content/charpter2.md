@@ -72,4 +72,92 @@ println(beans.a)
 
 ````
 
+## GString  要求在 "" 下可以实现模版操作
 
+````groovy
+
+    def  a = "aaaaa"
+    def b = "bbbbb"
+    
+    println("a=${a},b=${b}")
+
+````
+
+## 闭包
+
+内置变量
+- it （当闭包只有一个参数时变量it就代表这个内置参数变量）
+
+- this 它基本上保持了跟java中this一样的含义（在java的静态方法以及静态域中，this是没有任何含义的）
+
+- owner 它的含义基本上跟this的含义一样，只是除了一种情况，如果该闭包是在其他的闭包中定义的，那么owner是指向定义它的闭包对象。 如上面最后一种创建上下文：
+
+如：
+```groovy
+
+    def a = {
+        def b = {
+            println "closureClosure this:" + this
+            println "closureClosure owner:" + owner // ower指向b
+            println "closureClosure delegate:" + delegate
+        }
+        b.call()
+    }
+    
+    a.call()
+
+```
+- delegate 义大多数情况下是跟owner的含义一样，除非它被显示的修改（通过Closure.setDelegate()方法进行修改
+
+如
+
+````groovy
+
+    def scriptClosure={  
+        println "scriptClosure this:"+this  
+        println "scriptClosure owner:"+owner  
+        println "scriptClosure delegate:"+delegate  
+    }  
+    println "before setDelegate()"  
+    scriptClosure.call()  
+    scriptClosure.setDelegate ("abc")  
+    println "after setDelegate()"  
+    scriptClosure.call()  
+
+````
+
+
+## Switch变得更好用
+
+````groovy
+
+    def x = 20;
+    switch (x) {
+        case [1, 2, 3, 4, 5]:
+            println("aaaaaa")
+            break;
+        case "foo":
+            println("bbbbb")
+        case 10..1000:
+            println("ccccc")
+            break;
+         case Date:
+             println("dddddd")
+            break;
+    }
+    
+````
+
+
+## 元编程
+如：对String类，添加一个uppers方法
+
+```groovy
+    def metaClass = String.metaClass;
+    
+    metaClass.uppers = {-> toUpperCase()}
+    
+    println("aaa".uppers())
+    
+
+```
