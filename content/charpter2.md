@@ -158,6 +158,24 @@ println(beans.a)
     metaClass.uppers = {-> toUpperCase()}
     
     println("aaa".uppers())
-    
+   
+```
+
+## 用@TypeChecked注解可以用强类型检查  
+
+```groovy
+
+class Foos{
+    int  i = 42.0; //编译通过
+}
+
+
+@TypeChecked
+class Foo{
+    int  i = 42.0;//编译不通过
+}
 
 ```
+
+
+
