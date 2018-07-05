@@ -57,7 +57,7 @@ ae3586
 
 如果你觉得有用，也可以支付宝打赏小弟，以资鼓励作出更好的教程：
 
-![](bookcontent/img/myalipay.JPG)
+![](content/img/myalipay.JPG)
 
 
 
