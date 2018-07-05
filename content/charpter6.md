@@ -6,12 +6,12 @@
 ## 动态类型
 
 ```groovy
-import org.apache.tools.ant.types.resources.selectors.Date
-
-def v = 0;
-v = new Date();
-
-println(v);
+    import org.apache.tools.ant.types.resources.selectors.Date
+    
+    def v = 0;
+    v = new Date();
+    
+    println(v);
 
 ```
 
@@ -22,28 +22,28 @@ println(v);
 - 使用":",定义map数据， 并，对其直接操作
 
 ```groovy
-
-def list = [1, 2]
-list.leftShift(3)
-list.push(0)
-
-list.add("abc")
-
-list << "<<号";
-
-list += "加上+="
-
-println(list)
-
-list.forEach({ println(it)})
-
-def map = [a: 2, b: new Date()];
-
-map.put("aaaa","bbb")
-
-println(map)
-map.a = "a value"
-println(map)
+    
+    def list = [1, 2]
+    list.leftShift(3)
+    list.push(0)
+    
+    list.add("abc")
+    
+    list << "<<号";
+    
+    list += "加上+="
+    
+    println(list)
+    
+    list.forEach({ println(it)})
+    
+    def map = [a: 2, b: new Date()];
+    
+    map.put("aaaa","bbb")
+    
+    println(map)
+    map.a = "a value"
+    println(map)
 
 
 ```
@@ -52,7 +52,7 @@ println(map)
 
 
 ```groovy
-100.times {println("hi")}
+    100.times {println("hi")}
 
 ```
 
@@ -60,16 +60,17 @@ println(map)
 
 ````groovy
 
-class JavaBeans {
-    String a
-}
-
-def beans = new JavaBeans();
-
-beans.a = "a"
-
-println(beans.a)
+    class JavaBeans {
+        String a
+    }
+    
+    def beans = new JavaBeans();
+    
+    beans.a = "a"
+    
+    println(beans.a)
 
 ````
 
+##
 

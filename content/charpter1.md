@@ -1,75 +1,124 @@
-## groovy 介绍
-````html
-   https://baike.baidu.com/item/Groovy/180590
-```` 
+# 安装groovy 
 
-## 动态类型
+## JDK的安装
+groovy基于JDK,在安装groovy需要先安装JDK
 
-```groovy
-import org.apache.tools.ant.types.resources.selectors.Date
-
-def v = 0;
-v = new Date();
-
-println(v);
+- window环境安装JDK:
+```html
+https://jingyan.baidu.com/article/154b463111e7f028ca8f41a6.html
+```
+- mac环境安装JDK:
+```html
+https://blog.csdn.net/vvv_110/article/details/72897142
 
 ```
 
-## list,map类型
+## groovy的安装
 
-- 使用"[]"定义list列表，并，对其直接操作
+- window环境安装groovy:
 
-- 使用":",定义map数据， 并，对其直接操作
+```html
 
-```groovy
-
-def list = [1, 2]
-list.leftShift(3)
-list.push(0)
-
-list.add("abc")
-
-list << "<<号";
-
-list += "加上+="
-
-println(list)
-
-list.forEach({ println(it)})
-
-def map = [a: 2, b: new Date()];
-
-map.put("aaaa","bbb")
-
-println(map)
-map.a = "a value"
-println(map)
-
+https://www.jianshu.com/p/777cc61a6202
 
 ```
 
-## 任何东西都是对象
+- mac环境安装groovy:
 
+```html
 
-```groovy
-100.times {println("hi")}
+https://www.jianshu.com/p/b5f4b33c7c24
 
 ```
 
-## 属性操作变得更容易
+# nodemon安装为可选，个人习惯而定
 
-````groovy
+## 安装 node.js
 
-class JavaBeans {
-    String a
+```angular2html
+
+    https://nodejs.org/en/
+    
+```
+
+只需要点击下载，并安装就可以,跟安装普通软件一样
+
+
+## 安装 nodemon (用于自动重启groovy)
+
+windows环境下。打开 cmd,或者，powershell，或者，gitshell 输入如下命令
+ 
+```angular2html
+
+npm i -g nodemon
+
+```
+
+mac下，打开终端 输入如下命令
+
+```angular2html
+
+npm i -g nodemon
+
+```
+
+## 在项目下创建 nodemon.json （这个配置是能nodemon用的）
+
+输入如下内容
+
+````angularjs
+
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "execMap": {
+    "":"groovy",
+    "groovy": "groovy"
+  },
+  "watch": ["src/*.*"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json"
 }
 
-def beans = new JavaBeans();
 
-beans.a = "a"
 
-println(beans.a)
 
 ````
 
 
+"watch"字段，表示要监听的目录
+
+
+## IDE安装（任选）
+
+- vscode
+
+```bash
+
+https://code.visualstudio.com/
+
+```
+
+- jetbrains idea
+
+````bash
+
+https://www.jetbrains.com/idea/download/
+
+````
+
+- ecplise
+
+
+```html
+
+https://www.eclipse.org/
+
+
+```
