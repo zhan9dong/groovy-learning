@@ -177,5 +177,22 @@ class Foo{
 
 ```
 
+##使用 ？号来给默认值
 
+```groovy
+
+def a = null;
+def b = a?:"bbb";//在定义b变量时，先判断a是否有值，如果有，就取a的值作为b的值，否则就取值"bbb"
+
+println(b)
+
+//也可作空值判断
+
+def person;
+String name = person?.getName();
+
+println(name)
+```
+
+ 
 

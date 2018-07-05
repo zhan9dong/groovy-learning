@@ -1,75 +1,17 @@
-## groovy 介绍
-````html
-   https://baike.baidu.com/item/Groovy/180590
-```` 
+## groovy 工具
+- groovyConsole groovy自带的IDE
+- groovyc 自带的编译工具,使用它可以拿到编译过后的java文件
 
-## 动态类型
-
-```groovy
-import org.apache.tools.ant.types.resources.selectors.Date
-
-def v = 0;
-v = new Date();
-
-println(v);
-
+```bash
+ groovyc src/Test.groovy //就生成Test.class文件了
 ```
+- groovysh  自带的shell类似于python,node这些脚本语言
 
-## list,map类型
-
-- 使用"[]"定义list列表，并，对其直接操作
-
-- 使用":",定义map数据， 并，对其直接操作
-
-```groovy
-
-def list = [1, 2]
-list.leftShift(3)
-list.push(0)
-
-list.add("abc")
-
-list << "<<号";
-
-list += "加上+="
-
-println(list)
-
-list.forEach({ println(it)})
-
-def map = [a: 2, b: new Date()];
-
-map.put("aaaa","bbb")
-
-println(map)
-map.a = "a value"
-println(map)
+- groovydoc 自带的文档生成工具
 
 
-```
 
-## 任何东西都是对象
+ 
 
-
-```groovy
-100.times {println("hi")}
-
-```
-
-## 属性操作变得更容易
-
-````groovy
-
-class JavaBeans {
-    String a
-}
-
-def beans = new JavaBeans();
-
-beans.a = "a"
-
-println(beans.a)
-
-````
 
 
