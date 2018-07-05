@@ -45,7 +45,6 @@ FOREWORD BY James Gosling
  
 ```html
 https://richardgong1987.github.io/groovy-learning
-
 ```
 
 
