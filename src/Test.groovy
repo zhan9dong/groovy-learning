@@ -1,23 +1,6 @@
-def person = new Expando()
-
-person.name = 'Alice'
-
-person.age = 18
-
-
-person.description = {
-
-    println """
-           ----------description---------
-
-               name: ${delegate.name}
-
-              age:  ${delegate.age}
-           ------------------------------
-         """
-}
-
-
-
-person.description()
-
+def list = new ObservableList()
+def printer = { e -> println e.class }
+list.addPropertyChangeListener(printer)
+list.add 'Harry Potter'
+list.add 'Hermione Granger'
+list.remove(0)

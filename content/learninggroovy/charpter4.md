@@ -236,5 +236,11 @@ Expando类是Groovy语言中的一个相当有趣的类，
 
 ````groovy
 
+    def list = new ObservableList()
+    def printer = { e -> println e.class }
+    list.addPropertyChangeListener(printer)
+    list.add 'Harry Potter'
+    list.add 'Hermione Granger'
+    list.remove(0)
 
 ````
