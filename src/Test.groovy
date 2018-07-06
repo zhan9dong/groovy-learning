@@ -1,6 +1,10 @@
-def a(arg = "abc") { println(arg) }
+class Pie {
+    def bake() { this }
 
+    def make() { this }
 
-a()
+    def eat() { this }
+}
 
-a('hhakakakakkakaksksksks')
+new Pie().bake().eat().eat();
+
