@@ -1,10 +1,5 @@
-class Pie {
-    def bake() { this }
+def foo = 1
+def bar = 2
+def map = [(foo): bar]
 
-    def make() { this }
-
-    def eat() { this }
-}
-
-new Pie().bake().eat().eat();
-
+println map

@@ -44,7 +44,7 @@ FOREWORD BY James Gosling
 * gitbook笔记地址:
  
 ```html
-https://richardgong1987.github.io/groovy-learning
+    https://richardgong1987.github.io/groovy-learning
 ```
 
 
