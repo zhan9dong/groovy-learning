@@ -54,3 +54,35 @@
 
 
 ```
+
+## Missing Methods
+
+在类里可以定义def methodMissing(String name, args)方法
+
+用于在不实例化一个类时，调用一个不存在的方法是，会自动触发这个方法
+
+如：
+
+```groovy
+    class Testss {
+        def methodMissing(String name, args) {
+            println "kdslkfdsksdfkldsfkldfskl"
+        }
+    }
+    
+    def testss = new Testss();
+    testss.aa()
+
+```
+
+## 使用@Delegate注解的类 会继承被修饰的类
+
+```groovy
+    public class Person {
+        def a(){}
+    }
+    public class b {
+     @Delegate final Person person;
+    }
+```
+
