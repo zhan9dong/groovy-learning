@@ -9,6 +9,11 @@ Authors: Davis, Adam L.
 
 ## [笔记目录 点击进入](./SUMMARY.md)
 
+* gitbook笔记地址:
+ 
+```html
+    https://richardgong1987.github.io/groovy-learning
+```
 
 
 本人网名：止水
