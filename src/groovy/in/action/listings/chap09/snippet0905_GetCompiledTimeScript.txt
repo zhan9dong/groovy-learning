@@ -1,3 +1,0 @@
-println 'script compiled at: ' + compiledTime
-class MyClass { }
-println 'script class compiled at: ' + MyClass.compiledTime

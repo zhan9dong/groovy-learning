@@ -1,4 +1,0 @@
-@Retention(RetentionPolicy.SOURCE)
-@Target([ElementType.METHOD])
-@GroovyASTTransformationClass(classes = [MainTransformation])
-@interface Main {}

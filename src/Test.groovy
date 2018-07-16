@@ -1,9 +1,4 @@
-def find(list, tester) {
-    for (item in list)
-        if (tester(item)) return item
-}
+def a = "richard"
+def reg = /ri/;
 
-println find([3,3,4,1,2,0,1,23232,2],{ it > 1 });
-
-println find([3,3,4,1,2,0,1,23232,2]){ it > 1 }
-
+assert a == ~reg

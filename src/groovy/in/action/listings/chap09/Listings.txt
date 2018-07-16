@@ -1,3 +1,0 @@
-Listings not in the root folder:
-09_36: src/main/groovy/regina/CompiledAtASTTransformation.groovy
-09_37: src/test/groovy/regina/CompiledAtASTTransformationTest.groovy
