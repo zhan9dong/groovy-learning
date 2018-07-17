@@ -1,18 +1,18 @@
-class Wizards {
-
+class myWizards {
+    def list = [];
+    String toString() {
+        "${list}"
+    }
+    def setAt(it) {
+        list.add(it)
+    }
 }
 
-def wiz = new Wizards();
+def wiz = new myWizards();
 
-wiz << 'Gandolf'
-
-println wiz
-
-wiz << 'Harry'
-
-println wiz
-
-wiz - 'Harry'
+wiz['at'] = 'richardgong';
 
 println wiz;
+
+
 

@@ -118,5 +118,29 @@ SMS.bodyDSL "hahahahaahah"
     
 ````
 
+如果是属性操作，也可以用set,get风格的，
+如：
+
+```groovy
+
+    class myWizards {
+        def list = [];
+        String toString() {
+            "${list}"
+        }
+        def setAt(it) {
+            list.add(it)
+        }
+    }
+    
+    def wiz = new myWizards();
+    
+    wiz['at'] = 'richardgong';
+    
+    println wiz;
+    
+
+```
+
 ##Missing Methods and Properties 留白先？？？？
 
