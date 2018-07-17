@@ -1,4 +1,7 @@
 #DSL
+
+
+
 ## 用delegate属性可以直接实现
 
 ```groovy
@@ -71,15 +74,48 @@ class SMS {
 
 SMS.bodyDSL "hahahahaahah"
 ````
-```groovy
 
-```
 
-##覆盖操作符，留白先？？？？？？？
+##覆盖操作符. 
+
+    groovy可以用重写操作符的英文来覆盖操作符
+
 
 ````groovy
 
-
+  class Wizards {
+  
+      def list = []
+  
+      def leftShift(person) {
+          list.add person
+      }
+  
+      def minus(person) {
+          list.remove person
+      }
+  
+      String toString() {
+          "${list}"
+      }
+  }
+  
+  def wiz = new Wizards();
+  
+  wiz << 'Gandolf'
+  
+  println wiz
+  
+  wiz << 'Harry'
+  
+  println wiz
+  
+  wiz - 'Harry'
+  
+  println wiz;
+    
+  //如一个普通对象直接用运算符操作的话，它会不可控,或者，报错。而我们可以通过覆盖操作操作符实现可控的结果
+    
 ````
 
 ##Missing Methods and Properties 留白先？？？？

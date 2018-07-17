@@ -1,4 +1,18 @@
-def a = "richard"
-def reg = /ri/;
+class Wizards {
 
-assert a == ~reg
+}
+
+def wiz = new Wizards();
+
+wiz << 'Gandolf'
+
+println wiz
+
+wiz << 'Harry'
+
+println wiz
+
+wiz - 'Harry'
+
+println wiz;
+
