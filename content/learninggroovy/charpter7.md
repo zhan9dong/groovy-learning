@@ -118,7 +118,7 @@ SMS.bodyDSL "hahahahaahah"
     
 ````
 
-如果是属性操作，也可以用set,get风格的，
+如果是属性操作，也可以用set,get（map-like）风格的，
 如：
 
 ```groovy
@@ -142,5 +142,32 @@ SMS.bodyDSL "hahahahaahah"
 
 ```
 
-##Missing Methods and Properties 留白先？？？？
+##实现methodMissing"魔术"方法，当调用方法一个不存在的方法时，methodMissing方法会被触发
+
+##实现propertyMissing"魔术"方法，当调用方法一个不存在的属实时，propertyMissing方法会被触发
+
+这种特性，在实现DSL时，特别有用
+
+如：
+```groovy
+
+    class A{
+        
+        def propertyMissing(String name){
+            println "i am a propertyMissing method , now you call ${name} missing property"
+        }
+        def methodMissing(String name, arg){
+            println "i am a propertyMissing method , now you call ${name} missing method, arguments is  ${arg}"
+        }
+    }
+    
+    def a = new A();
+    
+    def mp = a.mp;// missing property
+    
+    def mm = a.mpp('a','b','c');
+    
+```
+
+
 

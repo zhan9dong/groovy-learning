@@ -1,18 +1,12 @@
-class myWizards {
-    def list = [];
-    String toString() {
-        "${list}"
-    }
-    def setAt(it) {
-        list.add(it)
-    }
+import groovy.transform.Immutable
+
+
+@Immutable
+public class A{
+    String name;
+    int size;
 }
 
-def wiz = new myWizards();
+A a = new A("richard", 100);
 
-wiz['at'] = 'richardgong';
-
-println wiz;
-
-
-
+println a;
