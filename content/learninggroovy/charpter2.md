@@ -107,7 +107,35 @@
 
 ## 闭包
 
+* 闭包中内置了很多迭代方法，如，find,findAll,collect
+
+
+
+```groovy
+
+    def list = ['foo', 'bar']
+    def newList = []
+    list.collect(newList){
+        it.toUpperCase()
+    }
+
+    println newList
+    
+    
+    //或者
+    
+     list = ['foo', 'bar']
+     newList = []
+    list.collect(newList, {
+        it.toUpperCase()
+    });
+    
+    println newList
+
+```
+
 * 在groovy中,闭包可以看成是一个 **代码块**，它可以没有参数和返回值；它像java 8以上的lambda语法 或者，像一个有一个方法的java内部类
+
 
 * 在groovy闭包中的隐含内置变量
 
