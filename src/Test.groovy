@@ -1,9 +1,9 @@
-class JavaBeans {
+class MyJavaBeans {
     String a
 }
 
-def beans = new JavaBeans();
+def beans = new MyJavaBeans();
 
-beans.a = "a"
+beans.a = "richard perpertity"
 
 println(beans.a)

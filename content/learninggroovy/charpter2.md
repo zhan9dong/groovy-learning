@@ -84,20 +84,24 @@
     
     def beans = new JavaBeans();
     
-    beans.a = "a"
+    beans.a = "richard perpertity"
     
     println(beans.a)
 
 ````
 
-## GString  要求在 "" 下可以实现模版操作
+## GString
+
+* 双引号""号的下字符串
+
+* 可以直接通过 $var 或者 ${var}方式简单明了的嵌入变量
 
 ````groovy
 
     def  a = "aaaaa"
     def b = "bbbbb"
     
-    println("a=${a},b=${b}")
+    println("a=${a},b=$b")
 
 ````
 
