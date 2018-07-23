@@ -185,6 +185,8 @@
 
 ## Switch变得更好用
 
+* groovy中的switch可以允许专入list,对象，范围...等表达式作为case依据
+
 ````groovy
 
     def x = 20;
