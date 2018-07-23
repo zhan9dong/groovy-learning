@@ -1,33 +1,94 @@
-## GDK
+# GDK
 
--  *Collections* 自带集合方法
+## grooy中自带集合方法
 
-- sort
-- findAll
+- sort 对集合进行排序，这个方法，可以接收1个闭包作为参数，或者，无参数
 
-- collect
 
-- inject
+````groovy
 
-- each
+    def lst = [13, 12, 15, 14];
+    def newlst = lst.sort();//默认排序
+    println newlst; //[12, 13, 14, 15]      
+    
+    //自定义处理
+    def newlist2 = lst.sort {
+        a, b -> a - b ? -1 : 1
+    }
+    
+    println newlist2; //   [15, 14, 13, 12]
+ 
+````
 
-- eachWithIndex
+- findAll 返回所有符合条件的元素。它可以接收1个闭包作为参数，或者，无参数， 
 
-- find
+```groovy
 
-- findIndexOf 
+    def lst = [13, 12, 15, 14,0,-1];
+    def newlst = lst.findAll();//[13, 12, 15, 14, -1]
 
-- any 
+    println newlst;//
 
-- every
 
-- reverse
+    def newlst2 = lst.findAll {
+        value -> value < 13
+    };
+    println newlst2;//[12, 0, -1, null, null]
 
-- first
+```
 
-- last
+- collect 返回 一个新的list,它可以接收1个闭包作为参数，或者，无参数，
 
-- tail
+```groovy
+
+    def lst = [13, 12, 15, 14, 0, -1];
+    def newlst = [];
+    newlst = lst.collect {
+        it * it
+    }
+    
+    println newlst //[169, 144, 225, 196, 0, 1]
+
+```
+
+- inject  
+
+
+- each  普通迭代方法
+
+- eachWithIndex 用法和each一样，唯一的不同是，eachWithIndex的传入的闭包，有两个参数，第一个是值，第二个是索引
+
+如：
+
+````groovy
+
+    def list = ["a", "b", "c"]
+    
+    
+    list.eachWithIndex {
+        String v, int index ->
+            println entry
+            println i
+    }
+
+
+````
+
+- find 返回第一个符合条件的元素，它可以接收1个闭包作为条件参数，或者，无参数，
+
+- findIndexOf 返回指定元素的索引值。它可以接收1个闭包作为条件参数，或者，无参数，
+
+- any 返回boolean值。只要有任意一个符合条件就返回true，它可以接收1个闭包作为条件参数，或者，无参数，
+
+- every 返回boolean值，只有所有符合条件才返回true,它可以接收1个闭包作为条件参数，或者，无参数
+
+- reverse, 它将原list倒序，返回新list。无参数
+
+- first 返回原list的第一个元素，无参数
+
+- last 返回原list的最后一个元素，无参数
+
+- tail  返回一个新list,这个list包含原list(除第一个元素)的所有元素，无参数
 
 ```groovy
 def  list = [2,9,4,6,1];

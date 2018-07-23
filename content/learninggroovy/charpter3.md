@@ -6,7 +6,9 @@
 
 
 ```bash
+
  groovyc src/Test.groovy //就生成Test.class文件了
+ 
 ```
 
 

@@ -1,10 +1,17 @@
-String.metaClass.uppers = { -> toUpperCase() };
+class Person {
+    String username
+    String email
+}
 
-println "aaa".uppers()
+def persons = [
+        new Person(username: 'mrhaki', email: 'email@host.com'),
+        new Person(username: 'hubert', email: 'other@host.com')
+]
+
+def map = persons.inject([:]) { result, person ->
+    result[person.username] = person.email
+    result
+}
 
 
-Integer.metaClass.say = { -> "I am Interger" }
-
-def i = new Integer(100);
-
-println i.say()
+println map

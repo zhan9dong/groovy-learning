@@ -277,7 +277,6 @@ println(b)
 * 安全访问
 
 ````groovy
-//也可作空值判断
 
     def person;
     String name = person?.getName();//先判断person是否为不为null,然后，再调用getName方法
