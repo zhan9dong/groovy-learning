@@ -5,46 +5,57 @@
 
 ## 动态类型
 
+定义一个变量以后，可以对这个变量赋与任何类型的值;
+
+如下：
+
 ```groovy
-import org.apache.tools.ant.types.resources.selectors.Date
 
-def v = 0;
-v = new Date();
+    import org.apache.tools.ant.types.resources.selectors.Date
 
-println(v);
+    def v = 0;//定义了数值类型的变量v
+    v = new Date();//然后又给它赋与Date类型的值. 
+    
+    println(v);
 
 ```
 
 ## list,map类型
 
+可以使用groovy简单明了的定义list和map数据
+
+
 - 使用"[]"定义list列表，并，对其直接操作
 
-- 使用":",定义map数据， 并，对其直接操作
+- 使用":"分隔key和value来定义map数据，key不需要用引号引起来，并且能使用key对其直接对map进行读写操作
 
 ```groovy
 
-def list = [1, 2]
-list.leftShift(3)
-list.push(0)
-
-list.add("abc")
-
-list << "<<号";
-
-list += "加上+="
-
-println(list)
-
-list.forEach({ println(it)})
-
-def map = [a: 2, b: new Date()];
-
-map.put("aaaa","bbb")
-
-println(map)
-map.a = "a value"
-println(map)
-
+    //list
+    def list = [1, 2]
+    list.leftShift(3)
+    list.push(0)
+    
+    list.add("abc")
+    
+    list << "<<号";
+    
+    list += "加上+="
+    
+    println(list)
+    
+    list.forEach({ println(it)})
+    
+    //map
+    def map = [a: 2, b: new Date()];
+    
+    //写入
+    map.put("aaaa","bbb")
+    
+    println(map)
+    //写入
+    map.a = "a value"
+    println(map)
 
 ```
 
