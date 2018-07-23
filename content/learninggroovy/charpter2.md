@@ -20,7 +20,7 @@
 
 ```
 
-## list,map类型
+## 简单明了的list,map类型
 
 可以使用groovy简单明了的定义list和map数据
 
@@ -37,7 +37,7 @@
     list.push(0)
     
     list.add("abc")
-    
+    //groovy中的<<可以对list数据类型的作用添加值，在数字类型时是位运算操作
     list << "<<号";
     
     list += "加上+="
@@ -59,11 +59,17 @@
 
 ```
 
-## 任何东西都是对象
+## 在groovy世界任何东西都是对象
 
+在java中，区分对待基本类型和引用类型的；
 
+在java中基本类型是不能像对象一样被使用的；
+
+而在groovy中，一切都是对象。一切都可以当成对象来使用；
+
+如：
 ```groovy
-100.times {println("hi")}
+    100.times {println("hi")}
 
 ```
 
