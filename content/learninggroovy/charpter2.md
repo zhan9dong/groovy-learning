@@ -107,8 +107,7 @@
 
 ## 闭包
 
-* 闭包中内置了很多迭代方法，如，find,findAll,collect
-
+* 闭包中内置了很多迭代方法，如，find,findAll,collect 等等。。后面会详细介绍
 
 
 ```groovy
