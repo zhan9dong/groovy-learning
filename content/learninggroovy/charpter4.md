@@ -51,7 +51,19 @@
 
 ```
 
-- inject  
+- inject  一个累积的过程，传入inject方法的'I'作为sum的初始值，在遍历collection的过程中，将处理结果("$sum $elem ")保存到sum中
+
+```groovy
+
+    def list = ["love", "you"]
+    def aa = list.inject('I') { sum, elem ->
+        "$sum $elem "
+    }
+    
+    println aa
+
+
+```
 
 
 - each  普通迭代方法
@@ -90,18 +102,34 @@
 
 - tail  返回一个新list,这个list包含原list(除第一个元素)的所有元素，无参数
 
-```groovy
-def  list = [2,9,4,6,1];
+- 其它的 groupBy，tokenize, unique，max，min，count，sum 等
 
-println(list.sort())
+
+
+```groovy
+
+    def  list = [2,9,4,6,1];
+    
+    println(list.sort())
 
 ```
 
 ## 通配符 （*） 可以很方便用来访问集合对象所有属性
 
+把它想像成在linux 查看某文件类型目录时的通配符一样
+
+如：
+```bash
+
+    ls *.txt
+
+```
+
+在groovy
+
 ```groovy
 
-a*.name.each { println(it)}
+    a*.name.each { println(it)}
 
 ``` 
 
@@ -109,6 +137,7 @@ a*.name.each { println(it)}
 
 
 ````groovy
+
     def listOfMaps = [['a': 11, 'b': 12], ['a': 21, 'b': 22]]
     
     println(listOfMaps.a);// [11, 21]
@@ -131,6 +160,7 @@ a*.name.each { println(it)}
 
 
 ```groovy
+
     //创建文件，并写入
     new File("book.txt").text = "richard zhisui";
     
