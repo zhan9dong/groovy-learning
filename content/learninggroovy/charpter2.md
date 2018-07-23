@@ -61,13 +61,12 @@
 
 ## 在groovy世界任何东西都是对象
 
-在java中，区分对待基本类型和引用类型的；
+* 在java中，区分对待基本类型和引用类型的；
 
-在java中基本类型是不能像对象一样被使用的；
-
-而在groovy中，一切都是对象。一切都可以当成对象来使用；
+* 在groovy中，一切都是对象。一切都可以当成对象来使用；
 
 如：
+
 ```groovy
     100.times {println("hi")}
 
@@ -75,17 +74,19 @@
 
 ## 属性操作变得更容易
 
+* 在groovy中，定义一个javabeans，不再需要写getter,setter方法。读写属性直接用"."号操作即可
+
 ````groovy
 
-class JavaBeans {
-    String a
-}
-
-def beans = new JavaBeans();
-
-beans.a = "a"
-
-println(beans.a)
+    class JavaBeans {
+        String a
+    }
+    
+    def beans = new JavaBeans();
+    
+    beans.a = "a"
+    
+    println(beans.a)
 
 ````
 

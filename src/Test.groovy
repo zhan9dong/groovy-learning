@@ -1,3 +1,9 @@
-int a= 100;
+class JavaBeans {
+    String a
+}
 
-println a << 5;
+def beans = new JavaBeans();
+
+beans.a = "a"
+
+println(beans.a)
