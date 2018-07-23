@@ -1,9 +1,18 @@
-class MyJavaBeans {
-    String a
+
+def a = {
+    println "a this:" + this
+    println "a owner:" + owner // ower指向b
+
+
+    def b = {
+        println "b this:" + this
+        println "b owner:" + owner // ower指向b
+    }
+    b.call()
+
+
 }
 
-def beans = new MyJavaBeans();
+a.call()
 
-beans.a = "richard perpertity"
 
-println(beans.a)

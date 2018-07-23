@@ -107,29 +107,36 @@
 
 ## 闭包
 
-内置变量
-- it （当闭包只有一个参数时变量it就代表这个内置参数变量）
+* 在groovy中,闭包可以看成是一个 **代码块**，它可以没有参数和返回值；它像java 8以上的lambda语法 或者，像一个有一个方法的java内部类
 
-- this 它基本上保持了跟java中this一样的含义（在java的静态方法以及静态域中，this是没有任何含义的）
+* 在groovy闭包中的隐含内置变量
 
-- owner 它的含义基本上跟this的含义一样，只是除了一种情况，如果该闭包是在其他的闭包中定义的，那么owner是指向定义它的闭包对象。 如上面最后一种创建上下文：
+- it，当闭包的方法中，没有定义任何参数时，也可以直接用it变量；
 
-如：
+- this 跟java中的this一样
+
+- owner 基本上跟this一样，只是除了一种情况，如果该闭包是在其他的闭包中定义的，owner就指向定义它的闭包对象。 如上面最后一种创建上下文：
+
 ```groovy
-
+   
     def a = {
+        println "a this:" + this
+        println "a owner:" + owner // ower指向b
+    
+    
         def b = {
-            println "closureClosure this:" + this
-            println "closureClosure owner:" + owner // ower指向b
-            println "closureClosure delegate:" + delegate
+            println "b this:" + this
+            println "b owner:" + owner // ower指向b
         }
         b.call()
+    
+    
     }
     
     a.call()
-
+    
 ```
-- delegate 义大多数情况下是跟owner的含义一样，除非它被显示的修改（通过Closure.setDelegate()方法进行修改
+- delegate 基本上是跟owner的一样，除非它通过Closure.setDelegate()
 
 如
 
