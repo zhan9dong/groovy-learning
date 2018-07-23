@@ -187,6 +187,8 @@
 
 * groovy中的switch可以允许专入list,对象，范围...等表达式作为case依据
 
+ 如：
+
 ````groovy
 
     def x = 20;
@@ -208,18 +210,29 @@
 
 
 ## 元编程
+
+* 在groovy中，可以使用 metaClass类来，对元对象添加属性和方法
+
 如：对String类，添加一个uppers方法
 
 ```groovy
-    def metaClass = String.metaClass;
+    String.metaClass.uppers = { -> toUpperCase() };
     
-    metaClass.uppers = {-> toUpperCase()}
+    println "aaa".uppers()
+
+
     
-    println("aaa".uppers())
+    
+    Integer.metaClass.say = { -> "I am Interger" }
+    
+    def i = new Integer(100);
+    
+    println i.say()
+    
    
 ```
 
-## 用@TypeChecked注解可以用强类型检查  
+## 用@TypeChecked注解进行强类型检查  
 
 ```groovy
 
@@ -235,7 +248,22 @@ class Foo{
 
 ```
 
-##使用 ？号来给默认值
+* 在闭包中，如果需要强类型检查，可以像java语法一样定义参数类型
+
+如：
+
+````groovy
+
+   def list = ["a","b","c"]
+   list.collect {
+    String it -> it.toUpperCase()
+   }
+
+````
+
+##Elvis Operator 运算
+
+* 进一步简化三元运算符
 
 ```groovy
 
@@ -244,13 +272,20 @@ def b = a?:"bbb";//在定义b变量时，先判断a是否有值，如果有，�
 
 println(b)
 
-//也可作空值判断
-
-def person;
-String name = person?.getName();
-
-println(name)
 ```
 
+* 安全访问
+
+````groovy
+//也可作空值判断
+
+    def person;
+    String name = person?.getName();//先判断person是否为不为null,然后，再调用getName方法
+    
+    println(name)
+
+````
  
+
+
 

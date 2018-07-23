@@ -1,7 +1,10 @@
-def list = ['foo', 'bar']
-def newList = []
-list.collect(newList, {
-    it.toUpperCase()
-});
+String.metaClass.uppers = { -> toUpperCase() };
 
-println newList
+println "aaa".uppers()
+
+
+Integer.metaClass.say = { -> "I am Interger" }
+
+def i = new Integer(100);
+
+println i.say()
