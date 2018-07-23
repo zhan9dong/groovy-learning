@@ -5,11 +5,14 @@ groovy基于JDK,在安装groovy需要先安装JDK
 
 - window环境安装JDK:
 ```html
-https://jingyan.baidu.com/article/154b463111e7f028ca8f41a6.html
+
+    https://jingyan.baidu.com/article/154b463111e7f028ca8f41a6.html
+    
 ```
 - mac环境安装JDK:
 ```html
-https://blog.csdn.net/vvv_110/article/details/72897142
+
+  https://blog.csdn.net/vvv_110/article/details/72897142
 
 ```
 
@@ -19,7 +22,7 @@ https://blog.csdn.net/vvv_110/article/details/72897142
 
 ```html
 
-https://www.jianshu.com/p/777cc61a6202
+    https://www.jianshu.com/p/777cc61a6202
 
 ```
 
@@ -27,7 +30,7 @@ https://www.jianshu.com/p/777cc61a6202
 
 ```html
 
-https://www.jianshu.com/p/b5f4b33c7c24
+    https://www.jianshu.com/p/b5f4b33c7c24
 
 ```
 
@@ -50,7 +53,7 @@ windows环境下。打开 cmd,或者，powershell，或者，gitshell 输入如�
  
 ```angular2html
 
-npm i -g nodemon
+    npm i -g nodemon
 
 ```
 
@@ -58,7 +61,7 @@ mac下，打开终端 输入如下命令
 
 ```angular2html
 
-npm i -g nodemon
+    npm i -g nodemon
 
 ```
 
@@ -101,7 +104,7 @@ npm i -g nodemon
 
 ```bash
 
-https://code.visualstudio.com/
+    https://code.visualstudio.com/
 
 ```
 
@@ -109,7 +112,7 @@ https://code.visualstudio.com/
 
 ````bash
 
-https://www.jetbrains.com/idea/download/
+    https://www.jetbrains.com/idea/download/
 
 ````
 
@@ -118,7 +121,7 @@ https://www.jetbrains.com/idea/download/
 
 ```html
 
-https://www.eclipse.org/
+    https://www.eclipse.org/
 
 
 ```
