@@ -1,13 +1,9 @@
-class Car {
-    String make
-    String model
+Properties properties = new Properties()
+File propertiesFile = new File('test.properties')
+propertiesFile.withInputStream {
+    properties.load(it)
 }
 
-def cars = [
-        new Car(make: 'Peugeot', model: '508'),
-        new Car(make: 'Renault', model: 'Clio')]
-def makes = cars*.make
+println properties.name
 
-makes.each {
-    println it
-}
+println properties.url

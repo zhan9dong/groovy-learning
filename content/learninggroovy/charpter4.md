@@ -266,7 +266,8 @@
 ````
 
 - 写入Writer操作
-````groovy
+
+```groovy
 
     //写入
     new File('mywithWriter.txt').withWriter('utf-8', {
@@ -280,7 +281,7 @@
     Water’s sound!'''    
 
 
-````
+```
 
 
 
