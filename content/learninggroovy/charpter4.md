@@ -33,7 +33,7 @@
     def newlst2 = lst.findAll {
         value -> value < 13
     };
-    println newlst2;//[12, 0, -1, null, null]
+    println newlst2;//[12, 0, -1]
 
 ```
 

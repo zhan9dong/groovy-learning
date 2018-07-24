@@ -1,9 +1,8 @@
-//函数
-def find(list, tester) {
-    for (item in list)
-        if (tester(item)) return item
+def lst = [13, 12, 15, 14, 0, -1];
+def newlst = [];
+newlst = lst.collect {
+    it * it
 }
-//调用，两种方式都行，闭包形式传参
-println find([3,3,4,1,2,0,1,23232,2],{ it > 1 });
 
-println find([3,3,4,1,2,0,1,23232,2]){ it > 1 }
+println newlst //[169, 144, 225, 196, 0, 1]
+
