@@ -1,9 +1,10 @@
-class Pie {
-    def bake() { this }
+show = { println it }
+square_root = { Math.sqrt(it) }
 
-    def make() { this }
-
-    def eat() { this }
+def please(action) {
+    [the: { what ->
+        [of: { n -> action(what(n)) }]
+    }]
 }
-def pie = new Pie()
-.make()
+
+please show the square_root of 100

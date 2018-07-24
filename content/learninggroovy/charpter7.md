@@ -1,7 +1,5 @@
 #DSL
 
-
-
 ## 用delegate属性可以直接实现
 
 ```groovy
@@ -40,11 +38,33 @@
     
 ```
 
+* 另外一个有趣的DSL实例
+
+```groovy
+
+    show = { println it }
+    square_root = { Math.sqrt(it) }
+    
+    def please(action) {
+      [the: { what ->
+        [of: { n -> action(what(n)) }]
+      }]
+    }
+   
+    please show the square_root of 100
+    
+    
+    // ==> 10.0
+
+```
+
+
 groovy的方法调用是可以不用加"()"的，
 
 上一个例子中
 
 ```groovy
+
  SMS.send {
         from "richard"
         to " to richard"
@@ -66,19 +86,29 @@ groovy的方法调用是可以不用加"()"的，
 又如：
 
 ````groovy
+
 class SMS {
     def static bodyDSL(String a){
         println "bodyDSL ...${a}"
     }
 }
 
-SMS.bodyDSL "hahahahaahah"
-````
 
+SMS.bodyDSL "hahahahaahah"
+
+````
 
 ##覆盖操作符. 
 
-    groovy可以用重写操作符的英文来覆盖操作符
+
+
+        
+* groovy可以用重写操作符的英文来覆盖操作符
+
+![](../img/operator.jpeg)
+
+
+如下实例
 
 
 ````groovy

@@ -3,6 +3,7 @@
 ## 策略模式
 
 假设有三个方法
+
 ```groovy
 
     def totalPricesLessThan10(prices) {
@@ -48,18 +49,11 @@
 ```
 
 
-## 更简易的元编程
+## Missing Methods调用一个不存在的方法时
 
-```groovy
+* 在类里可以定义def methodMissing(String name, args)方法
 
-
-```
-
-## Missing Methods
-
-在类里可以定义def methodMissing(String name, args)方法
-
-用于在不实例化一个类时，调用一个不存在的方法是，会自动触发这个方法
+在不实例化一个类时，调用一个不存在的方法时，会自动触发这个方法
 
 如：
 
@@ -75,14 +69,36 @@
 
 ```
 
-## 使用@Delegate注解的类 会继承被修饰的类
+## 使用@Delegate注解，可以实现拷贝方法和属性到当前的类
+
+如：
 
 ```groovy
+
     public class Person {
-        def a(){}
+        def name = "richard"
+    
+        def a() {
+            println "person a() method is call"
+        }
     }
-    public class b {
-     @Delegate final Person person;
+    
+    public class B {
+        @Delegate final Person person;
+        public B(Person person1) {
+            this.person = person1
+        }
+    
+        public B() {
+            this.person = new Person()
+        }
     }
+    
+    def b = new B()
+    
+    b.a()
+    
+    println b.name
+        
 ```
 
