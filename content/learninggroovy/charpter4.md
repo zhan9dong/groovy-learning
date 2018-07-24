@@ -156,17 +156,30 @@
 
 ````
 
-## IO 操作
+## IO 操作，变得更简单
 
+* groovy可以简单明了的进行文件读写操作
+
+如：
+
+* 读取一个文件内容
 
 ```groovy
+    println new File("book.txt").text
+    
+```
+* 写入一个文件内容：
 
-    //创建文件，并写入
-    new File("book.txt").text = "richard zhisui";
-    
-    
-    
-    
+```groovy
+     //创建文件，并写入
+        new File("book.txt").text = "richard zhisui";
+        
+```
+
+* 也可以通过字节方式写入
+
+```groovy
+   
     //先手动创建data文件
     byte[] data = new File("data").bytes;
     
@@ -174,15 +187,91 @@
     //把data的数据写入book2.txt
     new File("book2.txt").bytes = data;
     
-    
     //创建 dragons.txt 写入内容后，并读取dragons.txt内容
-    new File('dragons.txt').eachLine { ina-> println(ina)   }
+    new File('dragons.txt').eachLine { line-> println(line)   }
 
 
 ```
 
+* 如果需要用InputStream,Reader,OutputStream,Writer这些对象进行操作。groovy也提供类似的方法
 
-## URLs操作
+
+
+- 输入流InputStream操作
+
+````groovy
+    Properties properties = new Properties()
+    File propertiesFile = new File('test.properties')
+    propertiesFile.withInputStream {
+        properties.load(it)
+    }
+    
+    println properties.name
+    
+    println properties.url
+    
+
+````
+
+
+- Reader操作
+
+````groovy
+
+    def lineNo = 1
+    def line = 1;
+    new File("haiku.txt").withReader { reader ->
+        while ((line = reader.readLine())!=null) {
+            println "第${lineNo}行内容: ${line}"
+            lineNo++
+        }
+    }
+
+````
+
+- OutputStream操作
+
+如：文件复制
+
+
+````groovy
+
+    def srcFile = new File("haiku.txt")
+    def targetFile = new File("testOutputStream.txt")
+    targetFile.withOutputStream {
+        outputStream ->
+            srcFile.withInputStream {
+                inputStream ->
+                    outputStream << inputStream 
+            }
+    }
+    
+    
+    
+ 
+
+````
+
+- 写入Writer操作
+````groovy
+
+    //写入
+    new File('mywithWriter.txt').withWriter('utf-8', {
+        writer -> writer.writeLine 'Hello World'
+    });
+    
+    //精简版
+    
+    new File('mywithWriter.txt') << '''Into the ancient pond
+    A frog jumps
+    Water’s sound!'''    
+
+
+````
+
+
+
+## 极简的URLs操作
 
 ```groovy
     
@@ -199,17 +288,30 @@
         out.write(arr, 0, n);
     System.out.println(new String(out.toByteArray()));
     
-    
-    
-    
-    //2.史上最简易的抓取网页代码  
+```
+
+* 史上最简易的抓取网页代码
+
+```groovy
     
     println "http://google.com".toURL().text;
-
+    
 ```
 
 
-## Ranges  区间 用 (..)表示
+## Ranges 用 ... 表示 范围， 
+
+在groovy中。范围运算，可以用在循环，switch,字符串截取中。
+
+```html
+
+    1..10 - 包含范围的示例
+    1 .. <10 - 独占范围的示例
+    'a'..'x' - 范围也可以由字符组成
+    10..1 - 范围也可以按降序排列
+    'x'..'a' - 范围也可以由字符组成并按降序排列。
+    
+```
 
 
 ````groovy
@@ -219,8 +321,6 @@
     for (def i in 1..100){
         println(i)
     }
-    
-    
     
     
     def text = 'learning groovy'
@@ -235,9 +335,7 @@
     
     
     (1..<5).each { println(it) }
-    
-
-
+  
 ````
 
 
@@ -245,7 +343,7 @@
 
 ## 工具
 
-- ConfigSlurper特性，用于读取配置文件非常的方便
+- ConfigSlurper工具用于读取配置文件非常的方便
 
 ```groovy
     
