@@ -1,4 +1,6 @@
-## 默认值
+#从java中来
+
+## 参数默认值
 
 可以对定义的方法参数设置默认值
 
@@ -15,17 +17,121 @@
 
 ```
 
-## Equals, Hashcode ,  更多的简化
+## Equals, Hashcode ,toString  更多的简化
 
-可以通过
-```groovy
-    @Canonical
+* 使用@ToString可以帮助用户提供运行时的数据信息
+
+对比下 没有用注解前
+````groovy
+
+      public class Person {
+          String name
+          String address
+      }
+      def person = new Person("name":"richard","address":"my address")
+ 
+      println person 
+````
+
+
+用注解后
+
+````groovy
+    import groovy.transform.ToString
+    
+    public class Person {
+        String name
+        String address
+    }
+    def person = new Person("name":"richard","address":"my address")
+    
+    println person
+   
+````
+
+
+* @EqualsAndHashCode注解可以使equals相等的两个对象的hashCode也相等
+
+对比下没用之前
+
+````groovy
+
+    public class Person {
+        String name
+        String address
+    }
+    def person = new Person("name":"richard","address":"my address")
+    
+    def person2 = new Person("name":"richard","address":"my address")
+    
+    println person.equals(person2)
+    
+    println person.hashCode() == person2.hashCode() && person2
+
+````
+用了之后
+
+````groovy
+
+    import groovy.transform.EqualsAndHashCode
     
     @EqualsAndHashCode
+    public class Person {
+        String name
+        String address
+    }
+    def person = new Person("name":"richard","address":"my address")
+    
+    def person2 = new Person("name":"richard","address":"my address")
+    
+    println person.equals(person2)
+    
+    println person.hashCode() == person2.hashCode() && person2
+    
+
+````
+
+* @TupleConstructor 元构造器注解
+
+可以在传javabeans的数据时，免去传入key，而直接传value
+
+````groovy
+
+    import groovy.transform.TupleConstructor
     
     @TupleConstructor
-     
-    @ToString 修饰
+    public class Person {
+        String name
+        String address
+    }
+    def person = new Person("richard","my address")
+    
+    
+    println person.name
+    
+````
+
+* @Canonical 注解是 前面三个注解的合体
+
+如：
+
+```groovy
+    import groovy.transform.Canonical
+    
+    @Canonical
+    public class Person {
+        String name
+        String address
+    }
+    def person = new Person("richard","my address")
+    
+    def person2 = new Person("richard","my address")
+    
+    println person
+    
+    println person.equals(person2)
+    
+    println person2.hashCode() == person.hashCode()
 
 ```
 
