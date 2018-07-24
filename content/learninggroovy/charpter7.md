@@ -98,12 +98,12 @@ SMS.bodyDSL "hahahahaahah"
 
 ````
 
-##覆盖操作符. 
+## 覆盖操作符. 
 
 
 
         
-* groovy可以用重写操作符的英文来覆盖操作符
+* groovy可以用重写操作符的英文名方法来实现操作符覆盖
 
 ![](../img/operator.jpeg)
 
@@ -172,9 +172,9 @@ SMS.bodyDSL "hahahahaahah"
 
 ```
 
-##实现methodMissing"魔术"方法，当调用方法一个不存在的方法时，methodMissing方法会被触发
+## 实现methodMissing"魔术"方法，当调用方法一个不存在的方法时，methodMissing方法会被触发
 
-##实现propertyMissing"魔术"方法，当调用方法一个不存在的属实时，propertyMissing方法会被触发
+## 实现propertyMissing"魔术"方法，当调用方法一个不存在的属实时，propertyMissing方法会被触发
 
 这种特性，在实现DSL时，特别有用
 

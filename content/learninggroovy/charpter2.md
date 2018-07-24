@@ -261,7 +261,7 @@ class Foo{
 
 ````
 
-##Elvis Operator 运算
+## Elvis Operator 运算
 
 * 进一步简化三元运算符
 
