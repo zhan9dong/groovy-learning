@@ -73,17 +73,14 @@
 如：
 
 ````groovy
-
     def list = ["a", "b", "c"]
     
     
     list.eachWithIndex {
         String v, int index ->
-            println entry
-            println i
+            println v;
+            println index
     }
-
-
 ````
 
 - find 返回第一个符合条件的元素，它可以接收1个闭包作为条件参数，或者，无参数，
@@ -129,7 +126,23 @@
 
 ```groovy
 
-    a*.name.each { println(it)}
+    class Car {
+        String make
+        String model
+    }
+    
+    def cars = [
+            new Car(make: 'Peugeot', model: '508'),
+            new Car(make: 'Renault', model: 'Clio')]
+    def makes = cars*.make
+    
+    makes.each {
+        println it
+    }
+    
+    (1..10)*.multiply(2)
+    
+    ['Denver', 'Cheyenne', 'Reno', 'Sacramento']*.toUpperCase()
 
 ``` 
 
