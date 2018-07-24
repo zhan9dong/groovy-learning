@@ -1,22 +1,9 @@
-import groovy.transform.Canonical
+class Pie {
+    def bake() { this }
 
-@Canonical
-public class Person {
-    String name
-    String address
+    def make() { this }
+
+    def eat() { this }
 }
-def person = new Person("richard","my address")
-
-def person2 = new Person("richard","my address")
-
-println person
-
-println person.equals(person2)
-
-println person2.hashCode() == person.hashCode()
-
-
-
-
-
-
+def pie = new Pie()
+.make()

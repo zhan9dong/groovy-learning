@@ -146,39 +146,28 @@
     
     
     email = 'mailto:adam@email.com'
-    def mr = email =~ /[\w.]+@[\w.]+/;
+    def mr = email =~ /([\w.]+)@[\w.]+/;
     
-    if (mr.find()) println mr.group();
-    
-```
-## 连缀操作
-
-```groovy
-
-    class Pie {
-        def bake() { this }
-    
-        def make() { this }
-    
-        def eat() { this }
+    if (mr.find()){
+        println mr.group();
+        println mr.group(1)//分组结果
     }
     
-    new Pie().bake().eat().eat();
-    
-
 ```
 
-## 弱化范型
 
-默认情况下groovy的范型是被弱化的
+## 被弱化的范型
 
-以下运行正常
+* 默认情况下groovy的范型是被弱化的
+
+如下面的例子是可以运行正常的
+
 ```groovy
     List<Integer> nums = [1, 2, 3.1415, 'pie']
     
 ```
 
-除非加上@CompileStatic 加以类型强化
+* @CompileStatic 加以类型强化
 
 ```groovy
 
@@ -191,10 +180,11 @@
     
 ```
 
-## Groovy 数字类型
+## Groovy的数字类型
+
+* 在默认情况下groovy的数字都是BigDecimal类型的
 
 如果想定义double， float，long类型的数字，只需要在数字后面加上d,f,l
-
 
 ```groovy
     def a = 2d;
@@ -203,22 +193,25 @@
 
 ```
 
-## Boolean类型
 
-在默认情况下groovy会把空字符串，0,null地if条件语句下转成false，其它都转成true
+## Boolean的自动转换
+
+* 在默认情况下groovy会把空字符串，0,null地if条件语句下转成false，其它都转成true
+
  这个特性，有点像javascript语言
 
 ````groovy
 
- if ("foo") println("true")
- if (!"") println("true")
- if (42) println("true")
- if (! 0) println("true")
+     if ("foo") println("true")
+     if (!"") println("true")
+     if (42) println("true")
+     if (! 0) println("true")
+     
 ````
 
 ## map 语法糖
 
-groovy应许我们把一个变量当成map的key和value，这个跟es6有点像
+groovy应许我们把一个变量当成map的key和value，这个跟es6有点像,
 
 
 
