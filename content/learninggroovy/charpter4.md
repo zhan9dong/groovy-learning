@@ -51,7 +51,7 @@
 
 ```
 
-- inject  一个累积的过程，传入inject方法的'I'作为sum的初始值，在遍历collection的过程中，将处理结果("$sum $elem ")保存到sum中
+- inject  一个累积的过程方法（有点像js的reduce），传入inject方法的'I'作为sum的初始值，在遍历collection的过程中，将处理结果("$sum $elem ")保存到sum中
 
 ```groovy
 
