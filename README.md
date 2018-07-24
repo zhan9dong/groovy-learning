@@ -9,7 +9,7 @@ Authors: Davis, Adam L.
 
 ## [笔记目录 点击进入](./SUMMARY.md)
 
-* gitbook笔记地址:
+* github book笔记地址:
  
 ```html
 
