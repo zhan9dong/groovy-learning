@@ -1,15 +1,18 @@
 # 安装groovy 
 
 ## JDK的安装
+
 groovy基于JDK,在安装groovy需要先安装JDK
 
 - window环境安装JDK:
+
 ```html
 
     https://jingyan.baidu.com/article/154b463111e7f028ca8f41a6.html
     
 ```
 - mac环境安装JDK:
+
 ```html
 
   https://blog.csdn.net/vvv_110/article/details/72897142
@@ -69,7 +72,7 @@ mac下，打开终端 输入如下命令
 
 输入如下内容
 
-````angularjs
+```angularjs
 
 {
   "restartable": "rs",
@@ -90,9 +93,7 @@ mac下，打开终端 输入如下命令
 }
 
 
-
-
-````
+```
 
 
 "watch"字段，表示要监听的目录
