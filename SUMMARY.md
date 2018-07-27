@@ -18,4 +18,3 @@
 
 * [第九章 函数式编程](content/learninggroovy/charpter9.md)
 
-* [第十章 GPars](content/learninggroovy/charpter10.md)

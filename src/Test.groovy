@@ -1,13 +1,10 @@
-import groovy.transform.TailRecursive
+import static groovyx.gpars.GParsPool.withPool
 
-@TailRecursive
-long sizeOfList(list, counter = 0) {
-    if (list.size() == 0) {
-        counter
-    } else {
-        sizeOfList(list.tail(), counter + 1)
-    }
-}
 
-println sizeOfList(1..10000)
+def words = "This is just a plain text to count words in"
+
+
+println words.parallel
+
+
 

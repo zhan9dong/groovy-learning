@@ -1,5 +1,6 @@
 ## GPars
-Gpars主要是用来解决并发编程问题
+
+Gpars 主要是用来解决并发编程问题
 
 ```groovy
     import groovyx.gpars.actor.Actor
